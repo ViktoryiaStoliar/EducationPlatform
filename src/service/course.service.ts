@@ -9,24 +9,26 @@ async function getUsers(): Promise<iCourse[]> {
 
 async function createCourse(course: string): Promise<iCourse[]> {
     const data = await createCourseDB(course);
-    // if (!data.length) throw new Error('no data');
+    if (!data.length) throw new Error('no data');
     return data
 }
 
 async function getCourseById(id: number): Promise<iCourse[]> {
     const data = await getCourseByIdDB(id);
+    if (!data.length) throw new Error('no data')
     return data
 }
 
 async function updateCourse(course: string, id: number): Promise<iCourse[]> {
     const data = await updateCourseDB(course, id);
-    // if (!data.length) throw new Error('no data');
+    if (!data.length) throw new Error('no data');
     return data
 }
 
 async function deleteCourse(id: number): Promise<iCourse[]> {
     const data = await deleteCourseDB(id);
+    if (!data.length) throw new Error('no data');
     return data
 }
 
-export { getUsers, createCourse, getCourseById, updateCourse, deleteCourse}
+export { getUsers, createCourse, getCourseById, updateCourse, deleteCourse }
