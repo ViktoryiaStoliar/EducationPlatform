@@ -106,7 +106,30 @@ describe('', () => {
     })
 });
 
+describe('', () => {
+    test('', async () => {
+        const mock = jest.spyOn(repository, 'deleteCourseDB');
+        mock.mockResolvedValue([{ id: 1, course: 'test' }])
 
+        const res = await deleteCourse(1)
+
+        expect(mock).toBeCalled();
+        expect(mock).toBeCalledWith(1);
+        expect(res.length).toBeLessThan(2);
+        expect(res).toEqual([{ id: 1, course: 'test' }])
+    });
+
+    test('', async () => {
+        const mock = jest.spyOn(repository, 'deleteCourseDB');
+        mock.mockResolvedValue([]);
+        try {
+            const res = await deleteCourse(2);
+        } catch (error: any) {
+            expect(mock).toHaveBeenCalled();
+            expect(error.message).toBe('no data')
+        }
+    })
+})
 
 
 
