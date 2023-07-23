@@ -1,4 +1,4 @@
-import { getUsersDB, getCourseByIdDB, createCourseDB } from '../../../repository/course.repository'
+import { getUsersDB, getCourseByIdDB, createCourseDB, updateCourseDB, deleteCourseDB } from '../../../repository/course.repository'
 
 const mclient = {
     query: jest.fn()
@@ -44,4 +44,25 @@ describe('createCourseDB', () => {
 
         expect(res).toEqual([{ id: 1, course: 'test' }])
     })
-})
+});
+
+describe('updateCourseDB', () => {
+    test('', async () => {
+        mclient.query.mockResolvedValue({ rows: [{ id: 1, course: 'test1' }] });
+
+        const res = await updateCourseDB('test1', 1);
+
+        expect(res).toEqual([{ id: 1, course: 'test1' }])
+    })
+});
+
+describe('deleteCourseDB', () => {
+    test('', async () => {
+        mclient.query.mockResolvedValue({rows: [{id: 1, course: 'test1'}]})
+
+        const res = await deleteCourseDB(1);
+        
+        expect(res).toEqual([{id: 1, course: 'test1'}])
+    })
+});
+

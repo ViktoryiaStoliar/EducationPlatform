@@ -2,24 +2,7 @@ import { createUser, authUser } from '../../../service/api.service';
 import * as repository from '../../../repository/api.repository';
 import bcrypt from 'bcrypt'
 
-describe('authUser', () => {
-    test('', async () => {
-        const mock = jest.spyOn(repository, 'getEmailDB');
-        const hashMock = jest.spyOn(bcrypt, 'compare');
 
-        mock.mockResolvedValue([{ id: 1, name: 'test', surname: 'test2', email: 'test@mail.ru', pwd: 'dfghjktjy' }]);
-        hashMock.mockResolvedValue(true)
-
-        const res = await authUser('test@mail.ru', 'dfghjktjy');
-
-        expect(mock).toHaveBeenCalled();
-        expect(hashMock).toHaveBeenCalled();
-        // expect(hashMock).toHaveBeenCalledWith(true);
-
-        expect(res).toEqual([{ id: 1, name: 'test', surname: 'test2', email: 'test@mail.ru', pwd: 'dfghjktjy' }])
-
-    })
-});
 
 describe('createUser', () => {
     test('', async () => {

@@ -1,31 +1,62 @@
 import { getUsers, getCourseById, createCourse, updateCourse, deleteCourse } from '../../../service/course.service'
 import * as repository from '../../../repository/course.repository'
 
-describe('', () => {
+
+describe('getUsers', () => {
     test('', async () => {
-        const repOfFunc = jest.spyOn(repository, 'getUsersDB');
-        repOfFunc.mockResolvedValue([{ id: 1, course: 'test1' }, { id: 2, course: 'test2' }])
+        const mock = jest.spyOn(repository, 'getUsersDB');
+        mock.mockResolvedValue([{ id: 1, course: 'test' }]);
 
         const res = await getUsers();
 
-        expect(repOfFunc).toHaveBeenCalled();
-        expect(res.length).toBeGreaterThan(0);
-        expect(res).toEqual([{ id: 1, course: 'test1' }, { id: 2, course: 'test2' }])
+        expect(mock).toHaveBeenCalled();
+        expect(res).toEqual([{ id: 1, course: 'test' }])
     });
 
     test('', async () => {
         const mock = jest.spyOn(repository, 'getUsersDB');
         mock.mockResolvedValue([]);
-
         try {
             const res = await getUsers();
-
         } catch (error: any) {
             expect(mock).toHaveBeenCalled();
             expect(error.message).toBe('no data')
         }
     })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 describe('', () => {
     test('', async () => {

@@ -1,13 +1,14 @@
 import express, { Request, Response } from 'express';
 import { getUsers, createCourse, getCourseById, updateCourse, deleteCourse } from '../service/course.service'
 import { iCourse} from '../interfaces/interfaces'
+import buildResponse from '../helper/build.Response';
 
 const route = express.Router();
 
 route.get('/', async (req: Request, res: Response):Promise<void> => {
     try {
         const data: iCourse[] = await getUsers();
-        res.status(200).send(data)
+        buildResponse(res, 200, data)
     } catch (error: any) {
         res.status(404).send(error.message)
     }
