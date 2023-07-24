@@ -34,7 +34,7 @@ describe('createUser', () => {
 });
 
 describe('authUser', () => {
-    test((), async () => {
+    test('', async () => {
         const mockGetUser = jest.spyOn(repository, 'getEmailDB');
         const mockHashCompare = jest.spyOn(bcrypt, 'compare');
 

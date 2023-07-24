@@ -1,6 +1,8 @@
 import express, { Request, Response } from 'express';
 import { getAllUser, getUserById, updateUser, deleteUser } from '../service/user.service'
-const route = express.Router()
+import buildResponse from '../helper/build.Response';
+const route = express.Router();
+
 
 route.get('/', async (req: Request, res: Response): Promise<void> => {
     try {
