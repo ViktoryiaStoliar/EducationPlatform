@@ -31,4 +31,54 @@ describe('createUser', () => {
     //         expect(mock3).toHaveBeenCalled();
     //     }
     // })
+});
+
+describe('authUser', () => {
+    test((), async () => {
+        const mockGetUser = jest.spyOn(repository, 'getEmailDB');
+        const mockHashCompare = jest.spyOn(bcrypt, 'compare');
+
+        mockGetUser.mockResolvedValue([{
+            id: 1,
+            name: 'test',
+            surname: 'stest',
+            email: 'test@test.ru',
+            pwd: 'testtest'
+        }])
+        mockHashCompare.mockResolvedValue(true);
+
+        const res = await authUser('test@test.ru', 'testtest')
+        expect(mockGetUser).toHaveBeenCalled()
+        expect(mockHashCompare).toHaveBeenCalled()
+        expect(mockHashCompare).toHaveBeenCalledWith('testtest', 'testtest')
+
+        expect(res).toEqual([{
+            id: 1,
+            name: 'test',
+            surname: 'stest',
+            email: 'test@test.ru',
+            pwd: 'testtest'
+        }])
+    })
+
+    test('', async () => {
+        const mockGetUser = jest.spyOn(repository, 'getEmailDB');
+        const mockHashCompare = jest.spyOn(bcrypt, 'compare');
+
+        mockGetUser.mockResolvedValue([{
+            id: 1,
+            name: 'test',
+            surname: 'stest',
+            email: 'test@test.ru',
+            pwd: 'testtest'
+        }])
+        mockHashCompare.mockResolvedValue(false);
+
+        try {
+            await authUser('test@test.ru', 'testtest')
+        } catch (err: any) {
+            expect(mockHashCompare).toHaveBeenCalled();
+        }
+
+    })
 })
