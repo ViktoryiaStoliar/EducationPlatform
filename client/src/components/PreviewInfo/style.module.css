@@ -1,0 +1,25 @@
+.preview p .title {
+    color: #2B788B;
+    font: 700 16px Montserrat;
+    margin-bottom: 24px;
+}
+
+.preview h1 {
+    background-color: #000;
+    font: 1000 56px Dela Gothic One;
+    width: 500px;
+    margin-bottom: 30px;
+}
+
+.preview p .text {
+    width: 397px;
+    color: #757575;
+    font: 600 18px Montserrat;
+}
+
+.preview btnAbout {
+    color: #2B788B;
+    font: 700 16px Montserrat;
+    border-radius: 100px;
+    background: #C3DCE3;
+}
