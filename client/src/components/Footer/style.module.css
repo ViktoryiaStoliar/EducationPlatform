@@ -1,0 +1,24 @@
+.firstStitch {
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.firstStitch .resources,
+.name {
+    display: flex;
+    align-self: flex-start;
+    gap: 30px;
+}
+
+.firstStitch .resources p {
+    color: #757575;
+    font: 600 14px Montserrat;
+}
+
+.secondStitch .year{
+    color: #757575;
+    font: 600 12px Montserrat;
+}

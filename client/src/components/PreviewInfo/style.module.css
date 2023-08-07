@@ -1,25 +1,92 @@
-.preview p .title {
+.preview {
+    margin: 7% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preview .text {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.preview .text .title {
     color: #2B788B;
     font: 700 16px Montserrat;
     margin-bottom: 24px;
+    text-transform: uppercase;
 }
 
-.preview h1 {
-    background-color: #000;
+.preview .text h1 {
+    color: #000;
     font: 1000 56px Dela Gothic One;
     width: 500px;
     margin-bottom: 30px;
 }
 
-.preview p .text {
+.preview .text .textL {
     width: 397px;
     color: #757575;
     font: 600 18px Montserrat;
+    margin-bottom: 32px;
 }
 
-.preview btnAbout {
+.preview .text .btnAbout {
     color: #2B788B;
     font: 700 16px Montserrat;
     border-radius: 100px;
     background: #C3DCE3;
+    width: 165px;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.preview .text .quantity {
+    width: 163px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.preview .text .quantity .top {
+    display: flex;
+    align-items: center;
+}
+
+.preview .text .quantity .arrow {
+    background-image: url('../PreviewInfo/assets/arrow.png');
+    width: 24px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 5px;
+}
+
+.preview .text .quantity .number {
+    color: #000;
+    font: 400 40px Dela Gothic One;
+}
+
+.preview .text .quantity .number span {
+    color: #2B788B;
+    font-family: 400 40px Dela Gothic One;
+}
+
+.preview .text .quantity .underNumber {
+    color: #585858;
+    font: 600 16px Montserrat;
+}
+
+
+.preview .img {
+    background-image: url('../PreviewInfo/assets/prewiewGuy.png');
+    width: 710px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    left: 12%;
 }

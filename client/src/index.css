@@ -1,8 +1,14 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: normal;
+    box-sizing: border-box;
+    font-style: normal;
+    font-family: Dela Gothic One;
     font-family: Montserrat;
     background-color: #f6f5f4;
-    font-family: Dela Gothic One;
+}
+
+body {
+    width: 1220px;
+    margin: auto;
 }
