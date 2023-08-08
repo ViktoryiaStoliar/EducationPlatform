@@ -1,15 +1,17 @@
 .preview {
-    margin: 7% 0;
+    width: 1220px;
+    margin: 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .preview .text {
-    width: 500px;
+    width: 520px;
+    /* height: 201px; */
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    /* gap: 25px; */
 }
 
 .preview .text .title {
@@ -21,8 +23,8 @@
 
 .preview .text h1 {
     color: #000;
-    font: 1000 56px Dela Gothic One;
-    width: 500px;
+    font: 500 56px Dela Gothic One;
+    /* width: 500px; */
     margin-bottom: 30px;
 }
 
@@ -36,7 +38,7 @@
 .preview .text .btnAbout {
     color: #2B788B;
     font: 700 16px Montserrat;
-    border-radius: 100px;
+    border-radius: 30px;
     background: #C3DCE3;
     width: 165px;
     padding: 10px 0px;
@@ -44,8 +46,7 @@
 }
 
 .preview .text .quantity {
-    width: 163px;
-    height: 65px;
+    width:max-content;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -65,12 +66,12 @@
     margin-right: 5px;
 }
 
-.preview .text .quantity .number {
+.preview .text .quantity p {
     color: #000;
     font: 400 40px Dela Gothic One;
 }
 
-.preview .text .quantity .number span {
+.preview .text .quantity p span {
     color: #2B788B;
     font-family: 400 40px Dela Gothic One;
 }
@@ -78,8 +79,8 @@
 .preview .text .quantity .underNumber {
     color: #585858;
     font: 600 16px Montserrat;
+    text-align: center;
 }
-
 
 .preview .img {
     background-image: url('../PreviewInfo/assets/prewiewGuy.png');
@@ -90,3 +91,56 @@
     position: relative;
     left: 12%;
 }
+
+/* second section */
+
+.wrapper {
+    width: 100%;
+    background-color: #fff;
+}
+
+.learnLanguage {
+    width: 1220px;
+    margin: auto;
+    padding: 7% 0;
+    display: flex;
+}
+
+.learnLanguage .sittingGirl{
+    background-image: url('../PreviewInfo/assets/sittingGirl.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 508px;
+    height:
+     445px;
+}
+
+.learnLanguage .secondPath {
+    width: 480px;
+    height: 351.5px;
+}
+
+.learnLanguage .secondPath .bigL {
+    color: #000;
+    font: 400 48px Dela Gothic One;
+    margin-bottom: 30px;
+}
+
+.learnLanguage .secondPath .smallL {
+    color: #757575;
+    font: 600 18px Montserrat;
+    margin-bottom: 30px;
+}
+
+/* .img{
+    display: flex;
+}
+
+.sprint{
+    background-image: url(./assets/foot.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* width: ; */
+
+
+
