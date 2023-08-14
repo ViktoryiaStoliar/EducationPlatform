@@ -1,6 +1,6 @@
 .preview {
     width: 1220px;
-    margin: 7%;
+    margin: 7% auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,7 +8,6 @@
 
 .preview .text {
     width: 520px;
-    /* height: 201px; */
     display: flex;
     flex-direction: column;
     /* gap: 25px; */
@@ -46,7 +45,7 @@
 }
 
 .preview .text .quantity {
-    width:max-content;
+    width: max-content;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -101,23 +100,25 @@
 
 .learnLanguage {
     width: 1220px;
-    margin: auto;
-    padding: 7% 0;
+    margin: 7% auto;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.learnLanguage .sittingGirl{
+.learnLanguage .sittingGirl {
     background-image: url('../PreviewInfo/assets/sittingGirl.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 508px;
-    height:
-     445px;
+    height: 445px;
+    margin-right: 120px;
 }
 
 .learnLanguage .secondPath {
-    width: 480px;
-    height: 351.5px;
+    width: 520px;
+    display: flex;
+    flex-direction: column;
 }
 
 .learnLanguage .secondPath .bigL {
@@ -132,15 +133,137 @@
     margin-bottom: 30px;
 }
 
-/* .img{
+.learnLanguage .secondPath .imgSittingGirl {
+    display: flex;
+    gap: 20px;
+}
+
+.learnLanguage .secondPath .imgSittingGirl .sprint {
+    background-image: url('./assets/foot/Group\ 11.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 129px;
+    height: 112px;
+}
+
+.learnLanguage .secondPath .imgSittingGirl .tasks {
+    background-image: url('./assets/tasks.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 172px;
+    height: 112px;
+}
+
+
+/* third Path */
+
+.increase {
+    width: 1120px;
+    display: flex;
+    margin: 7% auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.increase .thirdPath {
+    /* width: 475px; */
     display: flex;
 }
 
-.sprint{
-    background-image: url(./assets/foot.png);
+.increase .thirdPath .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 34px;
+}
+
+.increase .thirdPath .text h1 {
+    color: #000;
+    font: 400 48px Dela Gothic One;
+}
+
+.increase .thirdPath .text p {
+    width: 396.886px;
+    color: #757575;
+    font: 600 18px Montserrat;
+}
+
+.increase .thirdPath .text .btnTextbook {
+    display: flex;
+    padding: 14px 22px;
+    justify-content: center;
+    align-items: center;
+    gap: 19px;
+    border-radius: 100px;
+    background-color: #C3DCE3;
+    width: 165px;
+
+    color: #2B788B;
+    font: 700 16px Montserrat;
+}
+
+.increase .thirdPath .imgGirlBook {
+    width: 580px;
+    height: 474px;
+    background-image: url('./assets/girlBook.png');
     background-repeat: no-repeat;
     background-size: contain;
-    /* width: ; */
+}
+
+/* four path */
+
+.wrapperFour {
+    width: 100%;
+    background-color: #fff;
+}
+
+.watchProgress {
+    width: 1220px;
+    margin: 7% auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.watchProgress .imgGirlBoy {
+    width: 680px;
+    height: 409.254px;
+    background-image: url('./assets/children.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 20px;
+}
+
+.watchProgress .progressText {
+    display: flex;
+    flex-direction: column;
+}
 
 
+.watchProgress .progressText h1 {
+    width: 474.464px;
+    color: #000;
+    font: 400 48px Dela Gothic One;
+    margin-bottom: 30px;
+}
 
+.watchProgress .progressText p {
+    width: 396.886px;
+    color: #757575;
+    font: 600 18px Montserrat;
+    margin-bottom: 34px;
+}
+
+.watchProgress .progressText .btnStatistics {
+    display: flex;
+    padding: 14px 22px;
+    justify-content: center;
+    align-items: center;
+    gap: 19px;
+    border-radius: 100px;
+    background-color: #C3DCE3;
+
+    color: #2B788B;
+    font: 700 16px Montserrat;
+    width: 180px;
+}

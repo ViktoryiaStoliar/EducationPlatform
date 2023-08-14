@@ -1,5 +1,9 @@
+.footer {
+    width: 1220px;
+    margin: 7% auto;
+}
+
 .firstStitch {
-    margin: 40px 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -13,12 +17,47 @@
     gap: 30px;
 }
 
-.firstStitch .resources p {
+.firstStitch .resources,
+.name p {
     color: #757575;
-    font: 600 14px Montserrat;
+    font: 600 12px Montserrat;
 }
 
-.secondStitch .year{
+.secondStitch {
+    margin-top: 27px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.secondStitch .instances {
+    display: flex;
+    gap: 30px;
+}
+
+.secondStitch .instances .img1 {
+    background-image: url('./assets/first.png');
+}
+
+.secondStitch .instances .img2 {
+    background-image: url('./assets/second.png');
+}
+
+.secondStitch .instances .img3 {
+    background-image: url('./assets/third.png');
+}
+
+.secondStitch .instances .img1,
+.img2,
+.img3 {
+    width: 30px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.secondStitch .year {
     color: #757575;
     font: 600 12px Montserrat;
 }

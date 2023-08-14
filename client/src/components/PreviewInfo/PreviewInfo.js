@@ -29,12 +29,12 @@ function PreviewInfo() {
 
                     <div className={style.sittingGirl}></div>
 
-                    <div class={style.secondPath}>
+                    <div className={style.secondPath}>
 
                         <h1 className={style.bigL}>Learn a language in a playful way</h1>
                         <p className={style.smallL}>Make learning programming languages more fun with mini-games</p>
 
-                        <div className={style.img}>
+                        <div className={style.imgSittingGirl}>
                             <div className={style.sprint}>
                             </div>
                             <div className={style.tasks}>
@@ -46,8 +46,40 @@ function PreviewInfo() {
                 </div>
 
             </div>
-            <div className=''></div>
-            <div className=''></div>
+
+
+            <div className={style.increase}>
+
+                <div className={style.thirdPath}>
+
+                    <div className={style.text}>
+                        <h1>Increase your knowledge</h1>
+                        <p>Traditional and new effective approaches to learning languages</p>
+                        <div className={style.btnTextbook}>Textbook →</div>
+                    </div>
+
+                    <div className={style.imgGirlBook}></div>
+
+                </div>
+
+            </div>
+
+
+            <div className={style.wrapperFour}>
+
+                <div className={style.watchProgress}>
+
+                    <div className={style.imgGirlBoy}></div>
+
+                    <div className={style.progressText}>
+                        <h1>Watch your progress every day</h1>
+                        <p>Save statistics on your achievements and mistakes</p>
+                        <div className={style.btnStatistics}>Statistics →</div>
+                    </div>
+
+                </div>
+
+            </div>
         </>
     )
 }
