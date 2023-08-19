@@ -1,5 +1,6 @@
 .wrapper {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 1220px;
     margin: 7% auto;

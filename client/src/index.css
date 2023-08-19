@@ -7,7 +7,17 @@
     /* font-family: Montserrat; */
 }
 
+html {
+    width: 100vw;
+    overflow: hidden;
+}
+
 body {
     margin: 0 auto;
-     background-color: #f6f5f4;
+    background-color: #f6f5f4;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
