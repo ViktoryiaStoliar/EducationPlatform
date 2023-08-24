@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
     width: 1220px;
     margin: 7% auto;
 }
@@ -25,23 +26,24 @@
     gap: 25px;
 }
 
-.wrapper .login {
+.wrapper .btns .login {
     font: 400 16px Montserrat;
     color: #000;
 }
 
-.wrapper .signUp {
+.wrapper .btns .signUp {
     
-    color: #FFF;
-    font: 400 16.553px Montserrat;
+    color: #fff;
+    font: 400 16px Montserrat;
     border-radius: 14.188px;
-    background: #2B788B;
+    background: #2B788B;;
+
     padding: 13.006px 0;
     width: 108px;
     text-align: center;
-}
+  }
 
-.wrapper .signUp:hover {
+.wrapper .btns .signUp:hover {
     transition: 0.5s;
     opacity: 70%;
 }

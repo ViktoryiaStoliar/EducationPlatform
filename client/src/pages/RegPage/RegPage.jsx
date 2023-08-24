@@ -1,21 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import style from './style.module.css'
+import style from './style.module.css';
+import InputForm from "../../components/InputForm/InputForm";
+import axios from 'axios';
 
 function RegPage() {
+
+    const [inp, setInp] = useState({
+        name: '',
+        surname: '',
+        pwd: '',
+        email: ''
+    })
+
+    async function createUser() {
+        // debugger
+        const request = await axios.post('http://localhost:5000/api/register', inp)
+        console.log(request);
+    }
+
+
+    const inpArr = [{ text: 'surname', type: 'text' }, { text: 'name', type: 'text' }, { text: 'email', type: 'text' }, { text: 'pwd', type: 'password' }];
+
     return (
         <>
-            <Header />
+            <Header isAuth={false}/>
             <div className={style.wrapper}>
 
-                <div className={style.info}>
+                <div className={style.info} >
                     <h1>Sign Up</h1>
-                    <div><input placeholder='Surname'></input></div>
-                    <div><input placeholder='Name'></input></div>
-                    <div><input placeholder='Email'></input></div>
-                    <div><input placeholder='Password'></input></div>
-                    <div className={style.btn}>Sign Up</div>
+                    <InputForm data={inpArr} setInp={setInp} inp={inp} />
+                    <div className={style.btn} onClick={createUser}>Sign Up</div>
                 </div>
 
                 <div className={style.img}></div>
