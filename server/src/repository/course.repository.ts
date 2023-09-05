@@ -9,10 +9,10 @@ async function getUsersDB(): Promise<iCourse[]> {
     return data
 }
 
-async function createCourseDB(course: string): Promise<iCourse[]> {
+async function createCourseDB(course: string, description: string): Promise<iCourse[]> {
     const client = await pool.connect();
-    const sql = 'insert into courses (course) values ($1) returning *'
-    const data = (await client.query(sql, [course])).rows
+    const sql = 'insert into courses (course, description) values ($1, $2) returning *'
+    const data = (await client.query(sql, [course, description])).rows
     return data
 }
 
@@ -23,10 +23,10 @@ async function getCourseByIdDB(id: number): Promise<iCourse[]> {
     return data
 }
 
-async function updateCourseDB(course: string, id: number): Promise<iCourse[]> {
+async function updateCourseDB(course: string, id: number, description: string): Promise<iCourse[]> {
     const client = await pool.connect();
-    const sql = 'update courses set course = $1 where id = $2 returning *'
-    const data = (await client.query(sql, [course, id])).rows
+    const sql = 'update courses set course = $1 description = $2 where id = $3 returning *'
+    const data = (await client.query(sql, [course, description, id])).rows
     return data
 }
 

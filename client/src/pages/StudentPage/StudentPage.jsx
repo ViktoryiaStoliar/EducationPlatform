@@ -1,37 +1,63 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './style.module.css';
 import Header from '../../components/Header/Header';
+import { Pagination } from '@mui/material';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const StudentPage = () => {
-    const arr = [{ h1: 'JavaScript', p: 'JavaScript is a practical course where students learn the basics of JavaScript. It covers variables, operators, conditionals, loops, functions, and data manipulation.' }, { h1: 'TypeScript', p: 'TypeScript is a course that provides an introduction to TypeScript. Students will learn about TypeScript\'s key features, such as type annotations, interfaces, classes, and modules' }, { h1: 'Python', p: 'Students will learn about variables, data types, conditionals, loops, functions, and file handling. Through hands-on exercises and projects, students will gain proficiency in writing Python code and solving real-world problems.' }]
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [arr, setArr] = useState([]);
+
+    async function getAllCourses() {
+        const res = await axios.get('http://localhost:5000/course');
+        setArr(res.data);
+    }
+
+    useEffect(() => {
+        getAllCourses();
+    }, [])
+
+    const size = 2;
+    const lastInd = currentPage * size;
+    const firstInd = lastInd - size;
+
+    const item = arr.slice(firstInd, lastInd);
+    const handleChange = (event, value) => {
+        setCurrentPage(value)
+    }
 
     return (
         <div>
             <Header isAuth={true} />
+            
             <div className={style.wrapper}>
                 <div className={style.logo}>
                     <div className={style.img}></div>
                     <h1>Courses</h1>
                 </div>
 
-                {arr.map((el) => {
+                {item.map((el, ind) => {
                     return (
-                        <div className={style.info}>
-                            <div className={style.img}></div>
-                            <div className={style.word}>
-                                <h1>{el.h1}</h1>
-                                <p>{el.p}</p>
+                        <Link to={`/course/${el.id}`} key={ind}>
+                            <div key={ind} className={style.info}>
+                                <div className={style.img}></div>
+                                <div className={style.word}>
+                                    <h1>{el.course}</h1>
+                                    <p>{el.description}</p>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     )
                 })}
 
-
-                <div>
-                    
+                <div className={style.pagination}>
+                    <Pagination count={Math.ceil(arr.length / size)}
+                        variant="outlined"
+                        page={currentPage}
+                        onChange={handleChange} />
                 </div>
-                <div></div>
             </div>
         </div>
     );

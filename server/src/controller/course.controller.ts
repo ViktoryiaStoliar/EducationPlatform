@@ -16,8 +16,8 @@ route.get('/', async (req: Request, res: Response):Promise<void> => {
 
 route.post('/', async (req: Request, res: Response): Promise<void> => {
     try {
-        const { course } = req.body;
-        const data : iCourse[]= await createCourse(course);
+        const { course, description } = req.body;
+        const data : iCourse[]= await createCourse(course, description);
         res.status(200).send(data)
     } catch (error: any) {
         res.status(404).send(error.message)
@@ -36,9 +36,9 @@ route.get('/:id', async (req: Request, res: Response): Promise<void> => {
 
 route.put('/:id', async (req: Request, res: Response): Promise<void> => {
     try {
-        const { course } = req.body;
+        const { course, description } = req.body;
         const { id } = req.params;
-        const data : iCourse[]= await updateCourse(course, id);
+        const data : iCourse[]= await updateCourse(course, id, description);
         res.status(200).send(data)
     } catch (error: any) {
         res.status(404).send(error.message)

@@ -1,8 +1,8 @@
-import express, {Request, Responce, NextFunction} from 'express'
+import express, {Request, Responce, NextFunction} from 'express';
 import route from './controller/course.controller';
-import user from './controller/user.controller'
-import api from './controller/api.controller'
-import bodyParser from 'body-parser'
+import user from './controller/user.controller';
+import api from './controller/api.controller';
+import bodyParser from 'body-parser';
 import cors from 'cors';
 
 
