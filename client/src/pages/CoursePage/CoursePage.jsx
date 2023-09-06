@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import style from './coursePage.module.css';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Button } from "@mui/material";
 
 const CoursePage = () => {
 
     const { id } = useParams();
-    const [res, setRes] = useState({});
-    const [lesson, setLesson] = useState({});
+    const [course, setCourse] = useState({});
+    const [lesson, setLesson] = useState([]);
 
     async function getAllDescription() {
         const res = await axios.get(`http://localhost:5000/course/${id}`);
-        setRes(res.data[0]);
+        console.log(res);
+        setCourse(res.data[0]);
     }
 
     async function getAllLessons() {
-        const lesson = await axios.get(`http://localhost:5000/lesson`);
-        setLesson(lesson.data[0])
+        const res = await axios.get(`http://localhost:5000/lesson/${id}`);
+
+        console.log(res.data);
+        setLesson(res.data);
     }
 
     useEffect(() => {
@@ -40,8 +43,8 @@ const CoursePage = () => {
                     <div className={style.container}>
                         <div className={style.img}></div>
                         <div className={style.course}>
-                            <h1>{res.course}</h1>
-                            <p>{res.description}</p>
+                            <h1>{course.course}</h1>
+                            <p>{course.description}</p>
                         </div>
                     </div>
 
@@ -51,8 +54,17 @@ const CoursePage = () => {
                 </div>
 
                 <div className={style.wrapperLesson}>
-                    <h2>15 lessons</h2>
-                    <p>{res.title}</p>
+                    <h2>Lessons:</h2>
+                    {lesson.map((el, index) => (
+                        <ul>
+                            <li key={index}>{el.id}:{el.title}</li>;
+                            <li key={index}>{el.id}:{el.title}</li>;
+                            <li key={index}>{el.id}:{el.title}</li>;
+                        </ul>
+                    ))}
+                    {/* {lesson.map((el, index) => (
+                        <p key={index}>{el.title}</p>
+                    ))} */}
                 </div>
 
             </div>

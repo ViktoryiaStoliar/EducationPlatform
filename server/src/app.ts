@@ -11,9 +11,9 @@ const app = express();
 
 app.use(cors());
 app.use (bodyParser.json());
-app.use('/course', route);
-app.use('/user', user);
 app.use ('/api', api);
+app.use('/user', user);
+app.use('/course', route);
 app.use('/lesson', lesson);
 
 app.use((error, req: Request, res: Responce, next: NextFunction) => res.send(error.message))
