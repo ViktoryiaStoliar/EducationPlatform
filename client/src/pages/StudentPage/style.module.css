@@ -82,5 +82,7 @@ h1 {
 }
 
 .pagination{
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
 }

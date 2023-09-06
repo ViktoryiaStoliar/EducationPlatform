@@ -1,69 +1,94 @@
 .wrapper {
+    max-width: 1180px;
+    margin: 100px auto;
+
     display: flex;
-    padding: 100px 528px;
     justify-content: center;
-    align-items: center;
     gap: 10px;
-    align-self: stretch;
-    background: #F6F5F4;
 }
 
 .wrapper .wrapperCourse {
+    padding-bottom: 40px;
     display: flex;
-    padding: 40px;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 30px;
-    align-self: stretch;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0px 22.89813px 45.79626px -11.44906px rgba(52, 41, 39, 0.08);
 }
 
-.wrapper .wrapperCourse .img {
+.wrapper .wrapperCourse .container {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.wrapper .wrapperCourse .container .img {
     background-image: url('./assets/book.png');
-    background-repeat: no-repeat;
     background-size: contain;
     width: 239px;
     height: 150px;
+    align-self: center;
 }
 
-.wrapper .wrapperCourse  .course {
+.wrapper .wrapperCourse .container .course {
     width: 253px;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+}
 
-    & h1 {
-        width: 253px;
-        color: #000;
-        text-align: center;
+.wrapper .wrapperCourse .container .course h1 {
+    width: 253px;
+    color: #000;
+    text-align: center;
 
-        font: 400 32 Dela Gothic One;
-        line-height: 100%;
-        letter-spacing: -1.28px;
-    }
+    font: 400 32 Dela Gothic One;
+    line-height: 100%;
+    letter-spacing: -1.28px;
+}
 
-    & p {
-        width: 253px;
-        height: 176px;
-        color: var(--primaty-grey-dark, #757575);
-
-        font: 600 16px Montserrat;
-        line-height: 140%;
-        letter-spacing: -0.64px;
-    }
+.wrapper .wrapperCourse .container .course p {
+    color: #757575;
+    font: 600 16px Montserrat;
+    line-height: 140%;
+    letter-spacing: -0.64px;
 }
 
 .wrapper .wrapperCourse .btn {
-    display: flex;
-    padding: 14px 22px;
-    justify-content: center;
-    align-items: center;
-    gap: 19px;
+    text-transform: none;
+    font: 400 16px Montserrat;
+    color: #152e37;
+    background: linear-gradient(145deg, rgba(134, 208, 218, 1) 0%, rgba(50, 151, 168, 1) 100%);
 
-
-    border-radius: 100px;
-    background: #C3DCE3;
-
-    color: var(--primaty-cyan-dark, #2B788B);
-
-    font: 700 16px Montserrat;
-    line-height: 100%;
-    letter-spacing: -0.64px;
+    &:hover {
+        background: linear-gradient(145deg, rgba(183, 228, 234, 1) 0%, rgba(77, 179, 195, 1) 100%);
+    }
 }
+
+.wrapper .wrapperLesson {
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0px 22.89813px 45.79626px -11.44906px rgba(52, 41, 39, 0.08);
+    padding: 40px;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 401px;
+    height: 372px;
+  }
+  
+  .wrapper .wrapperLesson h2 {
+    color: #000;
+    font: 400 32px Dela Gothic One;
+    line-height: 100%; /* 32px */
+    letter-spacing: -1.28px;
+  }
+  
+  .wrapper .wrapperLesson p {
+    color: #000;
+    font: 600 16px Montserrat;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: -0.64px;
+  }

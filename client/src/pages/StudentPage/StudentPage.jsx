@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import style from './style.module.css';
-import Header from '../../components/Header/Header';
-import { Pagination } from '@mui/material';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Header from '../../components/Header/Header';
+import { Pagination } from '@mui/material';
+import Footer from '../../components/Footer/Footer';
+import style from './style.module.css';
 
 const StudentPage = () => {
 
@@ -22,16 +23,16 @@ const StudentPage = () => {
     const size = 2;
     const lastInd = currentPage * size;
     const firstInd = lastInd - size;
-
     const item = arr.slice(firstInd, lastInd);
+
     const handleChange = (event, value) => {
         setCurrentPage(value)
     }
 
     return (
-        <div>
+        <>
             <Header isAuth={true} />
-            
+
             <div className={style.wrapper}>
                 <div className={style.logo}>
                     <div className={style.img}></div>
@@ -41,7 +42,7 @@ const StudentPage = () => {
                 {item.map((el, ind) => {
                     return (
                         <Link to={`/course/${el.id}`} key={ind}>
-                            <div key={ind} className={style.info}>
+                            <div className={style.info}>
                                 <div className={style.img}></div>
                                 <div className={style.word}>
                                     <h1>{el.course}</h1>
@@ -51,15 +52,19 @@ const StudentPage = () => {
                         </Link>
                     )
                 })}
-
-                <div className={style.pagination}>
-                    <Pagination count={Math.ceil(arr.length / size)}
-                        variant="outlined"
-                        page={currentPage}
-                        onChange={handleChange} />
-                </div>
             </div>
-        </div>
+
+            <div className={style.pagination}>
+                <Pagination count={Math.ceil(arr.length / size)}
+                    variant="outlined"
+                    page={currentPage}
+                    onChange={handleChange} />
+            </div>
+
+
+            <Footer />
+
+        </>
     );
 }
 

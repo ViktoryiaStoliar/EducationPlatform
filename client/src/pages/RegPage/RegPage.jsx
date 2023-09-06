@@ -26,6 +26,7 @@ function RegPage() {
     return (
         <>
             <Header isAuth={false}/>
+            
             <div className={style.wrapper}>
 
                 <div className={style.info} >
@@ -37,6 +38,7 @@ function RegPage() {
                 <div className={style.img}></div>
 
             </div>
+
             <Footer />
         </>
     )
