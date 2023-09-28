@@ -5,12 +5,16 @@ import api from './controller/api.controller';
 import bodyParser from 'body-parser';
 import lesson from './controller/lesson.controller'
 import cors from 'cors';
-
+import cookieParser from 'cookie-parser';
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+}));
 app.use (bodyParser.json());
+app.use(cookieParser());
 app.use ('/api', api);
 app.use('/user', user);
 app.use('/course', route);
