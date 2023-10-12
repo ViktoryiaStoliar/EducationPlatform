@@ -13,10 +13,10 @@ route.get('/', async (req: Request, res: Response): Promise<void> => {
     }
 });
 
-route.get('/:id', async (req, res): Promise<void> => {
+route.get('/:course_id', async (req, res): Promise<void> => {
     try {
-        const {id} =req.params;
-        const data = await getAllLessonById(id);
+        const {course_id} =req.params;
+        const data = await getAllLessonById(course_id);
         buildResponse(res, 200, data)
     } catch (error: any) {
         buildResponse(res, 404, error.message)

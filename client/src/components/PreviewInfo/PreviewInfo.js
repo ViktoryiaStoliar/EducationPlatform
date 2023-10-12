@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import style from './style.module.css'
 
 function PreviewInfo() {
@@ -8,7 +9,9 @@ function PreviewInfo() {
                     <p className={style.title}>E-COURSE PLATFORM</p>
                     <h1>Learning and teaching online, made easy.</h1>
                     <p className={style.textL}>Any subject, in any language, on any device, for all ages!</p>
-                    <div className={style.btnAbout}>About platform</div>
+                    <Link to={'/*'}>
+                        <div className={style.btnAbout}>About platform</div>
+                    </Link>
                     <div className={style.quantity}>
                         <div className={style.top}>
                             <div className={style.arrow}></div>
@@ -55,7 +58,10 @@ function PreviewInfo() {
                     <div className={style.text}>
                         <h1>Increase your knowledge</h1>
                         <p>Traditional and new effective approaches to learning languages</p>
-                        <div className={style.btnTextbook}>Textbook →</div>
+
+                        <Link to={'./*'}>
+                            <div className={style.btnTextbook}>Textbook →</div>
+                        </Link>
                     </div>
 
                     <div className={style.imgGirlBook}></div>
@@ -74,7 +80,9 @@ function PreviewInfo() {
                     <div className={style.progressText}>
                         <h1>Watch your progress every day</h1>
                         <p>Save statistics on your achievements and mistakes</p>
-                        <div className={style.btnStatistics}>Statistics →</div>
+                        <Link to={'./*'}>
+                            <div className={style.btnStatistics}>Statistics →</div>
+                        </Link>
                     </div>
 
                 </div>

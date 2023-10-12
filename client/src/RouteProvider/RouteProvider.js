@@ -5,18 +5,21 @@ import LoginPage from '../pages/LoginPage/LoginPage';
 import RegPage from '../pages/RegPage/RegPage';
 import StudentPage from '../pages/StudentPage/StudentPage';
 import CoursePage from '../pages/CoursePage/CoursePage';
+import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 
 const RouteProvider = (isAuth) => {
     if (isAuth) {
         return <Routes>
             <Route path='/course/:id' element={<CoursePage />}></Route>
             <Route path='/students' element={<StudentPage />}></Route>
+            <Route path='/*' element={<NotFoundPage />}></Route>
         </Routes >
     }
     return <Routes>
         <Route path="/" element={<PreviewPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path='/registration' element={<RegPage />}></Route>
+        <Route path='/*' element={<NotFoundPage />}></Route>
     </Routes >
 }
 

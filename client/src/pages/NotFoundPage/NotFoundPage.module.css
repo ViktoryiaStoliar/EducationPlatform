@@ -1,0 +1,48 @@
+.wrapper {
+    margin: auto;
+    width: 1180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .wrapper .info {
+} */
+
+.wrapper .info h1 {
+    color: var(--primaty-black, #000);
+    font: 400 56px Dela Gothic One;
+    line-height: 120%;
+    /* 67.2px */
+    letter-spacing: -2.24px;
+    margin: 24px 0;
+}
+
+.wrapper .info .p {
+    color: var(--primaty-grey-dark, #757575);
+    font: 500 20px Space Grotesk;
+    line-height: 142.1%;
+    /* 28.42px */
+}
+
+.wrapper .info .btn {
+    width: 110px;
+    padding: 14px 22px;
+    border-radius: 100px;
+    background: var(--primaty-cyan-dark, #2B788B);
+    margin: 34px 0;
+
+    color: #FFF;
+    text-align: center;
+    font: 700 16px Montserrat;
+    line-height: 100%;
+    letter-spacing: -0.64px;
+}
+
+.wrapper .img {
+    background-image: url('./assets/img.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 394px;
+    height: 413px;
+}

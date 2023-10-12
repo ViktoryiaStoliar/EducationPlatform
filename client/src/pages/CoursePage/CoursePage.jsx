@@ -20,7 +20,6 @@ const CoursePage = () => {
 
     async function getAllLessons() {
         const res = await axios.get(`http://localhost:5000/lesson/${id}`);
-
         console.log(res.data);
         setLesson(res.data);
     }
@@ -56,11 +55,7 @@ const CoursePage = () => {
                 <div className={style.wrapperLesson}>
                     <h2>Lessons:</h2>
                     {lesson.map((el, index) => (
-                        <ul>
-                            <li key={index}>{el.id}:{el.title}</li>;
-                            <li key={index}>{el.id}:{el.title}</li>;
-                            <li key={index}>{el.id}:{el.title}</li>;
-                        </ul>
+                        <p key={index}>{index}:{el.title}</p>
                     ))}
                     {/* {lesson.map((el, index) => (
                         <p key={index}>{el.title}</p>
