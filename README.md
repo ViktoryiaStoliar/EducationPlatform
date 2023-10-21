@@ -1,8 +1,8 @@
 # EducationPlatform
 
+Welcome to the EducationPlatform project!
 
-EducationPlatform Project
-Welcome to the EducationPlatform project! This comprehensive platform aims to provide an enhanced learning experience by offering a range of educational resources and features. The project utilizes a variety of technologies to create a seamless and efficient user experience.
+This comprehensive platform aims to provide an enhanced learning experience by offering a range of educational resources and features. The project utilizes a variety of technologies to create a seamless and efficient user experience.
 
 Frontend Technologies
 The frontend of EducationPlatform is built using the following technologies:
